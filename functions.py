@@ -22,7 +22,7 @@ class adv_functions:
             return 0
     def adv_circ(self,x,y):
         """
-        Special case of circle in circle
+        Special case of circle in circle. See note ...
         """
         if (.5-np.sqrt(7)/8)<x<(.5+np.sqrt(7)/8) and (np.sqrt(1-x**2))<y<(.5+np.sqrt(-(x-1)*x)):
             return 1
