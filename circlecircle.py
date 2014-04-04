@@ -25,8 +25,7 @@ Plain vs. stratified integration of simple circle
 a = [-1,-1]
 b = [1,1]
 
-#call = np.linspace(1000,100000,100)
-call =[1000]#,5000,10000,100000,1000000]
+call =[1000,5000,10000,100000,1000000]
 
 woop=time()
 callings1,qval1,error1,d1,t1 = [],[],[],[],[]
@@ -62,20 +61,11 @@ print "Elapsed so far: ",time()-woop, "seconds"
 """
 Plotting of results from above
 """
-#plt.plot(callings1,d1,'-b')
-#plt.plot(callings2,d2,'-k')
-#plt.legend(('Plain','Stratified'),loc='best')
-#plt.title('Deviation from pi compared to number of calls')
-#plt.savefig('dev_call.png',format='png')
-
-"""
-Plot to compare types of sampling
-"""
 start2 = time()
-param = [a,b,50000]
+param = [a,b,1000000]
 points = []
 print "Stratified Monte Carlo", rs_monte_carlo(adv_functions().adv_circ,param, points),"in","%.2f"%(time()-start2),"seconds"
-plt.figure(figsize=(10,10))
+plt.figure(figsize=(5,5))
 x1 = np.linspace(-1, 1, 500)
 y1 = np.sqrt(1-x1**2)
 y2 = -1*y1
@@ -86,22 +76,10 @@ y3 = y1/2+.5
 y4 = -y3+1
 plt.plot(x2, y3, "r-", lw=2)
 plt.plot(x2, y4, "r-", lw=2)
-plot(x1,np.zeros(len(x1),'-k')
-plot(np.zeros(len(x1),x1,'-k')
+plt.plot(x1,np.zeros(len(x1)),'-k')
+plt.plot(np.zeros(len(x1)),x1,'-k')
 plotpoints(points)
 
 plt.savefig("circlecircle_strat_monte.png",format='png')
-
-#start2 = time()
-#points = []
-#print "Plain Monte Carlo", plain_monte_carlo(adv_functions().adv_circ, a, b, 50000, points),"in","%.2f"%(time()-start2),"seconds"
-#plt.figure(figsize=(10,10))
-#x1 = np.linspace(-1, 1, 500)
-#y1 = np.sqrt(1-x1**2)
-#y2 = -1*y1
-#plt.plot(x1, y1, "r-", lw=2)
-#plt.plot(x1, y2, "r-", lw=2)
-#plotpoints(points)
-#plt.savefig("circlecircle_monte.png",format='png')
 
 print "Elapsed so far: ",time()-woop, "seconds"
