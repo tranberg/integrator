@@ -86,20 +86,22 @@ y3 = y1/2+.5
 y4 = -y3+1
 plt.plot(x2, y3, "r-", lw=2)
 plt.plot(x2, y4, "r-", lw=2)
+plot(x1,np.zeros(len(x1),'-k')
+plot(np.zeros(len(x1),x1,'-k')
 plotpoints(points)
 
 plt.savefig("circlecircle_strat_monte.png",format='png')
 
-start2 = time()
-points = []
-print "Plain Monte Carlo", plain_monte_carlo(adv_functions().adv_circ, a, b, 50000, points),"in","%.2f"%(time()-start2),"seconds"
-plt.figure(figsize=(10,10))
-x1 = np.linspace(-1, 1, 500)
-y1 = np.sqrt(1-x1**2)
-y2 = -1*y1
-plt.plot(x1, y1, "r-", lw=2)
-plt.plot(x1, y2, "r-", lw=2)
-plotpoints(points)
-plt.savefig("circlecircle_monte.png",format='png')
+#start2 = time()
+#points = []
+#print "Plain Monte Carlo", plain_monte_carlo(adv_functions().adv_circ, a, b, 50000, points),"in","%.2f"%(time()-start2),"seconds"
+#plt.figure(figsize=(10,10))
+#x1 = np.linspace(-1, 1, 500)
+#y1 = np.sqrt(1-x1**2)
+#y2 = -1*y1
+#plt.plot(x1, y1, "r-", lw=2)
+#plt.plot(x1, y2, "r-", lw=2)
+#plotpoints(points)
+#plt.savefig("circlecircle_monte.png",format='png')
 
 print "Elapsed so far: ",time()-woop, "seconds"
