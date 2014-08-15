@@ -20,11 +20,19 @@ class adv_functions:
             return 1
         else:
             return 0
-    def adv_circ(self,x,y):
+    def adv_circ_broken(self,x,y):
         """
-        Special case of circle in circle. See note ...
+        Special case of circle in circle. WRONG DEFINITION
         """
         if (.5-np.sqrt(7)/8)<x<(.5+np.sqrt(7)/8) and (np.sqrt(1-x**2))<y<(.5+np.sqrt(-(x-1)*x)):
+            return 1
+        else:
+            return 0
+    def adv_circ(self,x,y):
+        """
+        Special case of circle in circle.
+        """
+        if (x**2+y**2>1) and ((x-.5)**2+(y-.5)**2<.25):
             return 1
         else:
             return 0

@@ -62,7 +62,7 @@ print "Elapsed so far: ",time()-woop, "seconds"
 Plotting of results from above
 """
 start2 = time()
-param = [a,b,1000000]
+param = [a,b,50000]
 points = []
 print "Stratified Monte Carlo", rs_monte_carlo(adv_functions().adv_circ,param, points),"in","%.2f"%(time()-start2),"seconds"
 plt.figure(figsize=(5,5))
